@@ -1,0 +1,16 @@
+* {
+    display: inline;
+}
+
+.aaa {
+    display: none;
+}
+
+i,
+a {
+    display: inline;
+}
+
+span[color="blue"] {
+    display: inline;
+}
