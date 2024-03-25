@@ -97,6 +97,7 @@ func (parser *CssParser) DecParser() Declaration {
 		name = append(name, parser.Css[parser.Index])
 		parser.Index++
 	}
+	parser.Index++
 	for isSpace(parser.Css[parser.Index]) {
 		parser.Index++
 	}

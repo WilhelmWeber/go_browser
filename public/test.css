@@ -1,16 +1,9 @@
-* {
-    display: inline;
+p, div {
+    display: block;
 }
-
-.aaa {
+.none {
     display: none;
 }
-
-i,
-a {
-    display: inline;
-}
-
-span[color="blue"] {
+.inline {
     display: inline;
 }
