@@ -59,7 +59,7 @@ func ToStyledNode(node *htmlparser.Node, stylesheet cssparser.Stylesheet) (*Styl
 	}
 
 	//displayが設定されてなかったら初期値でblockを格納する
-	if _, ok := properites["display"]; !ok {
+	if _, ok := properites["display"]; !ok && node.Type == htmlparser.Elem {
 		properites["display"] = "block"
 	}
 	//エラーを返すことでDOMに含めないようにする
@@ -76,6 +76,6 @@ func ToStyledNode(node *htmlparser.Node, stylesheet cssparser.Stylesheet) (*Styl
 		}
 		children = append(children, styled)
 	}
-	stylednode := &StyledNode{Type: node.Type, Children: children, Elem: node.Elem, Properties: properites, Text: node.Text}
+	stylednode := &StyledNode{Type: node.Type, Children: children, Elem: node.Elem, Properties: properites}
 	return stylednode, nil
 }

@@ -16,12 +16,12 @@ type Node struct {
 	Type     NodeType
 	Children []*Node
 	Elem     Element
-	Text     string
 }
 
 type Element struct {
 	TagName    string
 	Attributes map[string]string
+	Text       string
 }
 
 type Parser struct {
@@ -166,7 +166,8 @@ func (parser *Parser) NodeParser() *Node {
 		return &Node{Type: Elem, Children: nodes, Elem: elem}
 	} else {
 		//テキストであったらそのままノードを返す
-		return &Node{Type: Tex, Text: parser.Tags[parser.Index]}
+		elm := Element{Text: parser.Tags[parser.Index]}
+		return &Node{Type: Tex, Elem: elm}
 	}
 }
 
