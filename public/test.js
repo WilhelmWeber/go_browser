@@ -1,1 +1,2 @@
-document.getElementById("result").innerHTML = "loaded"
+//DOM操作をする独自関数
+SetInnerTextById("result", "loaded")

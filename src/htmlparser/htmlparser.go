@@ -10,6 +10,7 @@ type NodeType int
 const (
 	Elem NodeType = iota
 	Tex
+	Nil //DOM探査用のtype(DOM探査してなかったら返す)
 )
 
 type Node struct {
